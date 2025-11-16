@@ -1,0 +1,5 @@
+IP: 89.169.181.119;
+name_taski: http://89.169.181.119;
+name_kittygram: https://kitty.89.169.181.119.sslip.io;
+login: gleb;
+password: kroliki;
