@@ -162,3 +162,10 @@ yarn-error.log*
 
 # secrets
 backend/.env
+# local backups
+*.bak.*
+
+# accidental folders
+frontend/kittygram@0.1.0
+frontend/react-scripts
+
