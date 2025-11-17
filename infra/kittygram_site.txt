@@ -1,5 +1,6 @@
 IP: 89.169.181.119;
-name_taski: https://89.169.181.119;
-name_kittygram: https://kitty.89.169.181.119.sslip.io;
+name_taski: https://taski.uchebayapraktikum.ru;
+name_kittygram: https://kittygram.uchebayapraktikum.ru;
 login: gleb;
 password: kroliki;
+
