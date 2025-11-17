@@ -90,7 +90,7 @@ server {
 #	}
 #}
 server {
-    server_name kitty.89.169.181.119.sslip.io;
+    server_name kittygram.uchebayapraktikum.ru;
 
     location /api/ {
         client_max_body_size 20M;
@@ -123,22 +123,47 @@ server {
     }
 
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/kitty.89.169.181.119.sslip.io/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/kitty.89.169.181.119.sslip.io/privkey.pem; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/kittygram.uchebayapraktikum.ru/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/kittygram.uchebayapraktikum.ru/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
 
 }
 
 server {
-    if ($host = kitty.89.169.181.119.sslip.io) {
+    if ($host = kittygram.uchebayapraktikum.ru) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
 
     listen 80;
-    server_name kitty.89.169.181.119.sslip.io;
+    server_name kittygram.uchebayapraktikum.ru;
     return 404; # managed by Certbot
 
 
 }
+
+server {
+    listen 443 ssl; # managed by Certbot
+    server_name taski.uchebayapraktikum.ru;
+
+    root   /var/www/taski;
+    index  index.html index.htm;
+
+    ssl_certificate /etc/letsencrypt/live/kittygram.uchebayapraktikum.ru/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/kittygram.uchebayapraktikum.ru/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = taski.uchebayapraktikum.ru) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    listen 80;
+    server_name taski.uchebayapraktikum.ru;
+    return 404; # managed by Certbot
+}
+
